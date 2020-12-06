@@ -1,0 +1,45 @@
+
+=================
+===== FILES =====
+=================
+
+-sorting package: This package is responsible for sorting files according to a given order.
+-filtering package: This package is responsible for filtering files according to a given filter.
+-filesprocessing package: This package is responsible for reading user's input, converting it to
+commends and processing them.
+
+
+
+=================
+===== DESIGN ====
+=================
+
+I decided to split this program into three packages; each package is responsible for a different part of the
+exercise. The fileprocessing package is the main package: it contains classes which are responsible for
+ receiving inputs from user and translating it into Cmd object. Then, it processes (by using the sorting and
+ filtering packages) the command and prints the proper output. The other two packages are responsible for
+ sorting and filtering the files in the source directory. The filtering package is designed by using an
+ abstract class, FilterManager, and all the other filters inherit from it. In addition, I used a factory
+ design pattern to create Sorter and Filter objects.
+
+=============================================
+== Description of the exceptions hierarchy ==
+=============================================
+
+The parent Exceptions class is DirectoryProcessorEx, which inherits java's Exception class.
+ReaderManagerException and FiltersManagerException inherit from  DirectoryProcessorEx.
+ReaderSortEx inherits from ReaderManagerException.
+I chose this design because I think in this way I can handle each warning and error in the most
+suitable place for it. This makes the code more readable and easy to understand.
+
+=====================================
+== How we sorted the matched files ==
+=====================================
+
+The program contains SorterManager class, which is responsible for creating a linked list with the sorted
+files. Each of the sorting classes (abs, type and size) implemented the Comperator Java class.
+All of these classes implemented the compare method differently, according to the order each class
+represents. I chose to use the Linked List data structure so that we could keep the order of the sorted
+files.
+
+
