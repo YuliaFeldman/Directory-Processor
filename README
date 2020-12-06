@@ -1,3 +1,8 @@
+Directory Processor - this is a flexible framework for working with files. Filters files in a given
+directory according to various conditionss and orders the filenames that passed the filtering according 
+to various properties.Implemented in Java by using Factory design pattern and OOP principles such as
+encapsulation and inheritance.
+
 
 =================
 ===== FILES =====
